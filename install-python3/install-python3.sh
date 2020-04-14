@@ -26,18 +26,17 @@ echo 'Installing requirement...'
 apt-get update &> /dev/null
 
 hash python &> /dev/null || {
-	echo '+ Installing Python'
-	apt-get install -y python3 python install curl lxc python3-lxc lxc-dev debian-archive-keyring libvirt-clients debootstrap rsync apt-transport-https > /dev/null
+	echo '+ Installing Dependency'
+	apt-get install -y python3 install curl lxc python3-lxc lxc-dev debian-archive-keyring libvirt-clients debootstrap rsync apt-transport-https > /dev/null
 }
 
 hash pip &> /dev/null || {
-	echo '+ Installing Python pip'
-	apt-get install -y python3-pip python-pip > /dev/null
+	echo '+ Installing Python pip3'
+	apt-get install -y python3-pip > /dev/null
 }
 
 python -c 'import flask' &> /dev/null || {
 	echo '| + Flask Python...'
-        pip install flask==0.9 2> /dev/null
 	pip3 install flask > /dev/null
 }
 
