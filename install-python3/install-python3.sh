@@ -37,7 +37,12 @@ hash pip &> /dev/null || {
 
 python -c 'import flask' &> /dev/null || {
 	echo '| + Flask Python...'
-	pip3 install flask PyFlakes > /dev/null
+	pip3 install flask==0.9 2> /dev/null
+}
+
+python -c 'import PyFlask' &> /dev/null || {
+	echo '| + PyFlask Python...'
+	pip3 install flask > /dev/null
 }
 
 
