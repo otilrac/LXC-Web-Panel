@@ -27,24 +27,19 @@ apt-get update &> /dev/null
 
 hash python &> /dev/null || {
 	echo '+ Installing Python'
-	apt-get install -y python3 > /dev/null
+	apt-get install -y python3 python > /dev/null
 }
 
 hash pip &> /dev/null || {
 	echo '+ Installing Python pip'
-	apt-get install -y python3-pip > /dev/null
+	apt-get install -y python3-pip python-pip > /dev/null
 }
 
 python -c 'import flask' &> /dev/null || {
 	echo '| + Flask Python...'
-	pip3 install flask==0.9 2> /dev/null
-}
-
-python -c 'import PyFlask' &> /dev/null || {
-	echo '| + PyFlask Python...'
+        pip install flask==0.9 2> /dev/null
 	pip3 install flask > /dev/null
 }
-
 
 hash git &> /dev/null || {
 	echo '+ Installing Git'
