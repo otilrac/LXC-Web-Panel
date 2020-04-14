@@ -27,7 +27,7 @@ apt-get update &> /dev/null
 
 hash python &> /dev/null || {
 	echo '+ Installing Dependency'
-	apt-get install -y python3 install curl lxc python3-lxc lxc-dev debian-archive-keyring libvirt-clients debootstrap rsync apt-transport-https > /dev/null
+	apt-get install -y python3 curl lxc python3-lxc lxc-dev debian-archive-keyring libvirt-clients debootstrap rsync apt-transport-https > /dev/null
 }
 
 hash pip &> /dev/null || {
