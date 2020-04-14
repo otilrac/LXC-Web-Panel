@@ -44,8 +44,8 @@ except ImportError:
     import ConfigParser as configparser
 
 # configuration
-config = configparser.SafeConfigParser()
-config.readfp(open('lwp.conf'))
+config = configparser.ConfigParser()
+parser.read_file(open('lwp.conf'))
 
 SECRET_KEY = '\xb13\xb6\xfb+Z\xe8\xd1n\x80\x9c\xe7KM' \
              '\x1c\xc1\xa7\xf8\xbeY\x9a\xfa<.'
